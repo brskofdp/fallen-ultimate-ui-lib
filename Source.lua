@@ -146,9 +146,12 @@
             Preset = {
                 ["TextEnabled"] = Color3.fromRGB(234, 221, 221),
                 ["TextDisabled"] = Color3.fromRGB(141, 135, 135),
+                ["TextMisc"] = Color3.fromRGB(141, 135, 135),
+                ["TextMain"] = Color3.fromRGB(234, 221, 221),
                 
                 ["PageElementBackground"] = Color3.fromRGB(9, 9, 9),
                 ["PageElementOutline"] = Color3.fromRGB(19, 18, 18),
+                ["Outline"] = Color3.fromRGB(19, 18, 18),
                 ["PageBackground"] = Color3.fromRGB(0, 0, 0),
     
                 ["KeypickerBackground"] = Color3.fromRGB(16, 16, 16),
@@ -2642,7 +2645,7 @@
                     Items.ComponentsHolder = Library:Create("Frame",{AnchorPoint = Vector2.new(1, 0); Parent = Items.Object.Instance; BackgroundTransparency = 1; Position = UDim2.new(1, 0, 0, 0); BorderSizePixel = 0; AutomaticSize = Enum.AutomaticSize.XY; BackgroundColor3 = Color3.fromRGB(255, 255, 255)})
                     Items.UIListLayout = Library:Create("UIListLayout",{VerticalAlignment = Enum.VerticalAlignment.Center; FillDirection = Enum.FillDirection.Horizontal; Parent = Items.ComponentsHolder.Instance; SortOrder = Enum.SortOrder.LayoutOrder})
     
-                    Cfg.ChangeText = function(Text)
+                    function Cfg:ChangeText(Text)
                         Items.Title.Instance.Text = Text
                     end
                 end
@@ -2963,7 +2966,7 @@
                     Items.Outline = Library:Create("Frame",{Parent = Items.Object.Instance; Position = UDim2.new(0, 1, 0, Cfg.Text and 27 or 0); Size = UDim2.new(1, -2, 0, 35); BorderSizePixel = 0; BackgroundColor3 = Themes.Preset["PageElementBackground"]}):Themify("PageElementBackground", "BackgroundColor3")
                     Items.UICorner = Library:Create("UICorner",{Parent = Items.Outline.Instance; CornerRadius = UDim.new(0, 4)})
                     Items.UIStroke = Library:Create("UIStroke",{Color = Themes.Preset["PageElementOutline"]; Parent = Items.Outline.Instance}):Themify("PageElementOutline", "Color")
-                    Items.Input = Library:Create("TextBox",{FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal); Parent = Items.Outline.Instance; TextColor3 = Themes.Preset["TextEnabled"]; Text = "Option1, Option2, Option3, Option4"; Size = UDim2.new(1, -20, 1, 0); Selectable = false; BorderSizePixel = 0; BackgroundTransparency = 1; TextXAlignment = Enum.TextXAlignment.Left; TextTruncate = Enum.TextTruncate.SplitWord; Active = false; TextSize = 16; BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Themify("TextEnabled", "TextColor3")
+                    Items.Input = Library:Create("TextBox",{FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal); Parent = Items.Outline.Instance; TextColor3 = Themes.Preset["TextEnabled"]; Text = Cfg.Default; PlaceholderText = Cfg.Placeholder; PlaceholderColor3 = Themes.Preset["TextDisabled"]; Size = UDim2.new(1, -20, 1, 0); Selectable = false; BorderSizePixel = 0; BackgroundTransparency = 1; TextXAlignment = Enum.TextXAlignment.Left; TextTruncate = Enum.TextTruncate.SplitWord; Active = false; TextSize = 16; BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Themify("TextEnabled", "TextColor3")
                     Items.UIPadding = Library:Create("UIPadding",{PaddingLeft = UDim.new(0, 9); Parent = Items.Input.Instance})
     
                     if Cfg.Text then 
