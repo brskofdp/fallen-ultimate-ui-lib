@@ -2100,7 +2100,7 @@
                     Items.TargetStats = Library:Create("CanvasGroup",{GroupTransparency = 1; Active = true; Parent = Library.HUD.Instance; Position = Pos(0, 300, 0, 300); Selectable = true; BorderSizePixel = 0; AutomaticSize = Enum.AutomaticSize.XY; BackgroundColor3 = Themes.Preset["OtherBackground"]}):Themify("OtherBackground", "BackgroundColor3")
                     :Draggify()
                     Items.UICorner = Library:Create("UICorner",{Parent = Items.TargetStats.Instance; CornerRadius = UDim.new(0, 3)})
-                    Items.TargetStatsUIStroke = Library:Create("UIStroke",{Color = Themes.Preset["OtherInline"]; Parent = Items.TargetStats.Instance; ApplyStrokeMode = Enum.ApplyStrokeMode.Border}):Themify("OtherInline", "Color")
+                    Items.TargetStatsUIStroke = Library:Create("UIStroke",{Transparency = 1; Color = Themes.Preset["OtherInline"]; Parent = Items.TargetStats.Instance; ApplyStrokeMode = Enum.ApplyStrokeMode.Border}):Themify("OtherInline", "Color")
                     Items.UIPadding = Library:Create("UIPadding",{PaddingTop = UDim.new(0, 12); PaddingBottom = UDim.new(0, 12); Parent = Items.TargetStats.Instance; PaddingRight = UDim.new(0, 12); PaddingLeft = UDim.new(0, 12)})
                     Items.UIListLayout = Library:Create("UIListLayout",{VerticalAlignment = Enum.VerticalAlignment.Center; FillDirection = Enum.FillDirection.Horizontal; Parent = Items.TargetStats.Instance; Padding = UDim.new(0, 10); SortOrder = Enum.SortOrder.LayoutOrder})
                     Items.ImageHolder = Library:Create("Frame",{LayoutOrder = -1; Parent = Items.TargetStats.Instance; Size = Pos(0, 68, 0, 68); BorderSizePixel = 0; BackgroundColor3 = Themes.Preset["PageElementBackground"]}):Themify("PageElementBackground", "BackgroundColor3")
@@ -2131,7 +2131,7 @@
                     end)
     
                     -- // InventoryViewer
-                    Items.InventoryViewer = Library:Create("CanvasGroup",{Parent = Library.HUD.Instance; Position = Pos(0, 400, 0, 400); BackgroundTransparency = 1; BorderSizePixel = 0; AutomaticSize = Enum.AutomaticSize.XY})
+                    Items.InventoryViewer = Library:Create("CanvasGroup",{GroupTransparency = 1; Parent = Library.HUD.Instance; Position = Pos(0, 400, 0, 400); BackgroundTransparency = 1; BorderSizePixel = 0; AutomaticSize = Enum.AutomaticSize.XY})
                     :Draggify()
                     Items.Viewer = Library:Create("Frame",{Parent = Items.InventoryViewer.Instance; ClipsDescendants = true; BorderSizePixel = 0; AutomaticSize = Enum.AutomaticSize.XY; BackgroundColor3 = Themes.Preset["PageElementBackground"]}):Themify("PageElementBackground", "BackgroundColor3")
                     Items.Holder = Library:Create("Frame",{Parent = Items.Viewer.Instance; BackgroundTransparency = 1; Size = Pos(0, 0, 0, 68); BorderSizePixel = 0; AutomaticSize = Enum.AutomaticSize.XY})
