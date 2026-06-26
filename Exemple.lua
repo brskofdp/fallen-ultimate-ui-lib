@@ -1,9 +1,7 @@
 -- // Example script demonstrating the usage of the Fallen Ultimate V3 UI Library
 
 -- Load the library (Replace with your GitHub raw link once uploaded)
-local Library = loadstring(readfile("Source.lua"))() 
--- If loading from GitHub:
--- local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/brskofdp/fallen-ultimate-ui-lib/refs/heads/main/Source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/brskofdp/fallen-ultimate-ui-lib/refs/heads/main/Source.lua"))()
 
 -- Create the main window
 local Window = Library:CreateWindow({
